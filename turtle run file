@@ -1,0 +1,67 @@
+from turtle import *
+from random import *
+up ()
+goto(-100,100)
+
+down()
+speed(15)
+for i in range(0,16):
+    write(i)
+    right(90)
+    forward(200)
+    
+    left(180)
+    forward(200)
+    right(90)
+    
+    forward(20)
+chp=Turtle()
+chp.shape("turtle")
+chp.color(randint(0,255), randint(0,255), randint(0,255))
+chp.up()
+chp.goto(-120,70)
+chp.down()
+
+svs=Turtle()
+svs.shape("turtle")
+svs.color(randint(0,255), randint(0,255), randint(0,255))
+svs.up()
+svs.goto(-120,10)
+svs.down()
+
+bolel=randint(1,24)
+
+for i in range(0, bolel):
+    bolel= Turtle()
+    bolel.shape("turtle")
+    bolel.color(randint(0, 255), randint(0, 255), randint(0, 255))
+    bolel.up()
+    bolel.goto(-90+25*i,-120)
+    bolel.down()
+    bolel.left(90)
+
+x_chp=0
+x_svs=0
+text = input('Какая черепаха победит?')
+tex = Turtle()
+tex.up()
+tex.goto(-120,120)
+tex.hideturtle()
+tex.write('Ты думаешь что победит ' +  text, font = ('1', 12, '2' 'bold'))
+
+while ((x_chp<305) and (x_svs<305)):
+    chp_step = randint(1,5)
+    x_chp += chp_step
+    chp.forward(chp_step)
+
+    svs_step = randint(1,5)
+    x_svs += svs_step
+    svs.forward(svs_step)
+
+if x_chp >= 305:
+    chp.write("Я победила")
+    x = input("Победила первая черепашка")
+elif x_svs >= 305:
+    svs.write("Я победила")
+    x = input("Победила вторая черепашка")
+    
